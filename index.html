@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>CSS Image Effects</title>
+	
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/cssgram.css">
+
+</head>
+
+<body id="home">
+
+	<h1>Mindblowing CSS Image Effects</h1>
+	
+	<ul>
+  	<li>
+  	  <h3>Original</h3>
+  	  <img src="img/backpack-lake.jpg">
+    </li>
+  	
+		<li>
+		  <h3>Greyscale</h3>
+		  <img class="grayscale" src="img/backpack-lake.jpg">
+		  <pre>
+      .grayscale {
+        -webkit-filter: grayscale(1);
+        filter: grayscale(1);
+      }
+		  </pre>
+		</li>
+		
+		<li>
+		  <h3>Blur</h3>
+		  <img class="blur" src="img/backpack-lake.jpg">
+		  <pre>
+      .blur {
+        -webkit-filter: blur(5px);
+        filter: blur(5px);
+      }
+		  </pre>
+		</li>
+		
+		<li>
+		  <h3>Invert</h3>
+		  <img class="invert" src="img/backpack-lake.jpg">
+		  <pre>
+      .invert {
+        -webkit-filter: invert(.8);
+        filter: invert(.8);
+      }
+		  </pre>
+		</li>
+	</ul>
+	
+	<h2>CSSgram Examples</h2>
+	
+	<ul>
+  	<li>
+  	  <h3>Toaster</h3>
+  	  <figure class="toaster">
+  	    <img src="img/backpack-lake.jpg">
+  	  </figure>
+    </li>
+    
+    <li>
+  	  <h3>1977</h3>
+  	  <figure class="_1977">
+  	    <img src="img/backpack-lake.jpg">
+  	  </figure>
+    </li>
+    
+    <li>
+  	  <h3>Walden</h3>
+  	  <figure class="walden">
+  	    <img src="img/backpack-lake.jpg">
+  	  </figure>
+    </li>
+    
+    <li>
+  	  <h3>Nashville</h3>
+  	  <figure class="nashville">
+  	    <img src="img/backpack-lake.jpg">
+  	  </figure>
+    </li>
+    
+    <li>Full list of available effects available <a href="http://una.im/CSSgram/">here</a>.</li>
+	</ul>
+	
+	<h2>Backdrop Filters</h2>
+	
+	<img class="backdrop-img" src="img/backdrop-blur.png">
+	
+	<p>Checkout the blurring of the images behind the top navigation bar as you scroll down the page. Check browser support and more here: <a href="https://webkit.org/blog/3632/introducing-backdrop-filters/">https://webkit.org/blog/3632/introducing-backdrop-filters/</a>
+	
+	<h2>Animating CSS Filters</h2>
+	
+	<ul>
+  	<li>
+		  <h3>Animating greyscale on hover</h3>
+		  <img class="grayscale" src="img/backpack-lake.jpg">
+		  <pre>
+      .grayscale {
+        -webkit-filter: grayscale(1);
+        filter: grayscale(1);
+        transition: 2s;
+        animation-timing-function:ease-in-out;
+      }
+      
+      .grayscale:hover {
+        -webkit-filter: grayscale(0);
+        filter: grayscale(0);
+      }
+		  </pre>
+		</li>
+		
+		<li>
+		  <h3>Animate on click <button> Click to animate</button></h3>
+		  <img class="original" src="img/backpack-lake.jpg">
+		  <pre>
+      .animate-blur {
+        -webkit-animation: blur-animated 2s linear;
+      }
+      
+      @-webkit-keyframes blur-animated {
+        0% {
+          -webkit-filter: blur(0);
+        }
+        
+        100% {
+          -webkit-filter: blur(5px);
+        }
+      }
+		  </pre>
+		</li>
+	</ul>
+
+	<p class="photo-credit">Photo by <a href="https://unsplash.com/photos/HkMyfOoSjkQ">Micki Spollen</a></p>
+	
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script>
+    $('button').click(function() {
+      $('.original').toggleClass('animate-blur');
+    });
+  </script>
+
+</body>
+</html>
